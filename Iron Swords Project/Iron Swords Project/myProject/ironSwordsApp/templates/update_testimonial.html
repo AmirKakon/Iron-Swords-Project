@@ -1,8 +1,0 @@
-{% extends 'base.html' %}
-
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">שמור שינויים</button>
-</form>
-<a href="{% url 'nova_party_evidence' %}">ביטול</a>

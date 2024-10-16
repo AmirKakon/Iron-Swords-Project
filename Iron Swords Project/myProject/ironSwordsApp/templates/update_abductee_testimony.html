@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עדכון עדות חטוף</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: right;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            height: 150px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-family: 'Arial'
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>עדכון - עדות חטוף ששוחרר משבי חמאס</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>תמונת החטוף</label>
+                {% if form.instance.image %}
+                    <img src="{{ form.instance.image.url }}" alt="תמונת החטוף" style="max-width: 150px; margin-bottom: 10px;">
+                {% endif %}
+                {{ form.image }} <!-- Image upload field -->
+            </div>
+            <div class="form-group">
+                {{ form.owner.label_tag }}
+                {{ form.owner }}
+            </div>
+            <div class="form-group">
+                {{ form.story.label_tag }}
+                {{ form.story }}
+            </div>
+            <div class="form-group">
+                {{ form.age.label_tag }}
+                {{ form.age }}
+            </div>
+            <div class="form-group">
+                {{ form.date_of_return.label_tag }}
+                {{ form.date_of_return }}
+            </div>
+            <button type="submit">עדכון עדות</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        © "כל הזכויות שמורות לאתר - "היכל התהילה של גיבורי מלחמת חרבות הברזל 
+    </footer>
+</body>
+</html>

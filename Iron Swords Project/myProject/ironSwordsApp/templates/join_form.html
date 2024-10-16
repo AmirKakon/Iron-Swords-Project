@@ -9,12 +9,40 @@
             font-family: Times New Roman, sans-serif;
             background-color: #f4f4f4;
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align items at the start of the container */
-            min-height: 100vh; /* Use min-height instead of height */
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
-            padding: 20px; /* Add some padding to the body */
+            padding: 20px;
         }
+
+        .navbar {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2px 0;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.2); /* הוספת גבול תחתון */
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.2); /* צל עליון ותחתון */
+        }
+
+        .navbar a {
+            color: black;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            flex-grow: 1;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
         .join-form-box {
             background-color: #fff;
             padding: 20px;
@@ -22,15 +50,19 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             width: 600px;
             text-align: center;
+            margin-top: 35px; /* Added margin to compensate for fixed navbar */
         }
+
         .join-form-box h1 {
             margin-bottom: 20px;
         }
+
         .join-form-box p {
             text-align: center;
             margin-top: 20px;
             line-height: 1.6;
         }
+
         .join-form-box input, .join-form-box textarea {
             width: calc(100% - 22px);
             padding: 10px;
@@ -38,10 +70,12 @@
             border: 1px solid #ddd;
             border-radius: 4px;
         }
+
         .join-form-box textarea {
             height: 200px;
-            resize: vertical; /* Makes the textarea resizable */
+            resize: vertical;
         }
+
         .join-form-box button {
             width: 100%;
             padding: 10px;
@@ -52,20 +86,24 @@
             cursor: pointer;
             margin-bottom: 10px;
         }
+
         .join-form-box button:hover {
             background-color: #0056b3;
         }
+
         .green-button {
-            background-color: #28a745; /* Green background */
+            background-color: #28a745;
         }
+
         .green-button:hover {
-            background-color: #218838; /* Darker green on hover */
+            background-color: #218838;
         }
+
         .form-group {
-            text-align: left;
-            margin-bottom: 10px;
             text-align: right;
+            margin-bottom: 10px;
         }
+
         .form-group label {
             display: block;
             text-align: right;
@@ -74,14 +112,22 @@
     </style>
 </head>
 <body>
+    <!-- Navigation bar with buttons -->
+    <div class="navbar">
+        <a href="{% url 'kibbutz_stories' %}">להוספת סיפור על קיבוץ</a>
+        <a href="{% url 'nova_party_evidence' %}">להוספת עדות ממסיבת הנובה</a>
+        <a href="{% url 'testimonies_abductees' %}">להוספת עדות חטוף שחזר מהשבי </a>
+        <a href="{% url 'zaka_people' %}">להוספת תגובות למתנדבי זק"א</a>
+    </div>
+
     <div class="join-form-box">
         <h1>טופס הצטרפות עבור גיבור</h1>
          <p>
-            המידע ישמש כקלט במערכת המידע של אתר היכל התהילה לגיבורי מלחמת "חרבות הברזל" ב-7 באוקטובר להפצת סיפורי הגבורה<br>
+            המידע ישמש כקלט במערכת המידע של אתר "היכל התהילה של גיבורי מלחמת חרבות הברזל" ב-7 באוקטובר להפצת סיפורי הגבורה<br>
             המידע שיועבר על ידך יעובד במערכת וישולב בפרויקט<br>
             במילוי הטופס אתה מאשר את פרסום הפרטים - באתר
         </p>
-        <form method="post" action="{% url 'join_form_for_hero' %}">
+        <form method="post" action="{% url 'join_form_for_hero' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
                 <label for="first_name">:שם פרטי</label>

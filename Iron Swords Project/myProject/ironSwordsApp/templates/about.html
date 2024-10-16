@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Iron Swords War Hall of Fame</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f0f4f8, #e0e6ea);
+            color: #333;
+            line-height: 1.6;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff; /* צבע טקסט לבן */
+            background: linear-gradient(to right, #4A90E2, #000000); /* שיפוע צבעים */
+            border-radius: 10px; /* קצוות מעוגלים */
+            padding: 15px; /* ריפוד פנימי מוקטן */
+            margin: 40px auto; /* רווח מעל ומתחת מוקטן */
+            font-size: 2.3em; /* גודל טקסט מוקטן */
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* צל טקסט מוקטן */
+            border: 4px solid #1d71b8; /* גבול סביב הכותרת מוקטן */
+            max-width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל חיצוני */
+        }
+        section {
+            margin: 30px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 2.2em;
+            color: #1d71b8;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1d71b8;
+            padding-bottom: 10px;
+        }
+        .cta-section {
+            text-align: center;
+            margin: 50px auto;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button {
+            background-color: #1d71b8;
+            color: #ffffff;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button:hover {
+            background-color: #155a8a;
+            transform: scale(1.05);
+        }
+        .cta-button:active {
+            background-color: #124a6b;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .section-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        .thank-you {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 40px;
+        }
+        .section-content {
+            padding: 20px;
+        }
+        .section-content::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: #2a9d8f;
+            border-radius: 0 0 15px 15px;
+            z-index: -1;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+        .footer {
+            background-color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            border-top: 1px solid #ddd;
+        }
+        .intro-section {
+            background: #ffffff;
+            color: #333;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 800px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .intro-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .intro-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ברוכים הבאים ל"היכל התהילה של גיבורי מלחמת חרבות הברזל"</h1>
+
+    <section>
+        <p>מחווה לאומץ, להקרבה ולחוסן של גיבורי מלחמת "חרבות הברזל". הפלטפורמה שלנו מוקדשת לשימור הסיפורים של אלה שעיצבו את ההיסטוריה, בין אם באמצעות אומץ לבם בשדה הקרב או תרומתם לקהילות שהושפעו מהמלחמה.</p>
+    </section>
+
+    <section>
+        <div class="section-title">הפרוייקט שלנו</div>
+        <p>"היכל התהילה של מלחמת חרבות הברזל" נוצר כדי לכבד את זיכרונותיהם של אלה שנלחמו באומץ ולהבטיח שסיפוריהם לעולם לא יישכחו. אנו שואפים לספק מרחב שבו ניתן לשתף את מורשת הגיבורים שלנו, לזכור ולהעביר לדורות הבאים.</p>
+    </section>
+
+    <section>
+        <div class="section-title">סיפורי גיבורים מהמלחמה</div>
+        <p>בעמוד הבית שלנו תמצאו סיפורים של האנשים האמיצים שהשתתפו במלחמת "חרבות הברזל". סיפורים אלה כוללים את אלה ששרדו ואת אלה שאיבדו את חייהם באופן טרגי. משתמשים רשומים יכולים לתרום על ידי יצירה ושיתוף של סיפורי גיבורים חדשים.</p>
+    </section>
+
+    <section>
+        <div class="section-title">אירועי קיבוצי עוטף עזה</div>
+        <p>באתר שלנו יש גם מדור המוקדש לקיבוצי חבל עוטף עזה. כאן יכולים המשתמשים לחקור ולתרום להיסטוריה ולחוויות של הקיבוצים בתקופת המלחמה.</p>
+    </section>
+
+    <section>
+        <div class="section-title">עדויות ממסיבת הנובה</div>
+        <p>מאפיין מרכזי נוסף של האתר שלנו הוא המדור "עדויות ממסיבת הנובה", שבו משתמשים יכולים לקרוא ולשתף עדויות ממקור ראשון על חוויות במהלך המלחמה במיקום המסיבה.</p>
+    </section>
+
+    <section>
+        <div class="section-title">סרטוני מתנדבי זק"א</div>
+        <p>יש לנו מדור מיוחד המציג סרטונים של מתנדבי זק"א, המדגישים את תפקידם המכריע במתן סיוע במהלך המלחמה.</p>
+    </section>
+
+    <section>
+        <div class="section-title">אוסף מסמכים, תמונות וסרטונים</div>
+        <p>האתר שלנו מספק גם אוסף של מסמכים, תמונות וסרטונים מהמלחמה, הנגישים דרך דף מעבר ייעודי. שימו לב שסעיף זה כולל אזהרת צפייה בשל האופי הגרפי של חלק מהתוכן.</p>
+    </section>
+
+    <section class="cta-section">
+        <div class="section-title">הצטרפו אלינו</div>
+        <p>כדי לתרום לארכיון ההולך וגדל שלנו של סיפורי גיבורים, תולדות הקיבוצים ועדויות מהמלחמה, אנו מזמינים אתכם להירשם ולהיכנס לאתר שלנו. בכך, אתם הופכים לחלק מהמשימה שלנו לכבד ולזכור את אלה שעמדו זקוף במהלך מלחמת "חרבות הברזל".</p>
+        <a href="{% url 'register' %}" class="cta-button">הרשם עכשיו!</a>
+    </section>
+
+    <section>
+        <div class="section-title">תודה</div>
+        <p>תודה שביקרתם ב"היכל התהילה של גיבורי מלחמת חרבות ברזל"</p>
+        <p>ביחד, נוכל להבטיח שסיפורי הגבורה יחיו לנצח!</p>
+    </section>
+
+    <section class="intro-section">
+        <p class="highlight">שמי סיון זרגרי , סטודנטית לתואר ראשון במדעי המחשב במכללה "האקדמית רמת גן".</p>
+        <p class="highlight">יצרתי אתר זה להעלאת המודעות למלחמת "חרבות ברזל" ולמאורעותיה , וכזכרון נצחי עבור מדינת ישראל</p>
+        <p> ניתן ליצור קשר בכתובת: Sivanzargari120@gmail.com</p>
+        <p> ובנייד: 052-454-1011</p>
+    </section>
+    
+
+    <footer class="footer">
+        © כל הזכויות שמורות לאתר - "היכל התהילה של מלחמת חרבות ברזל" 
+    </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תיעודים קשים לצפייה</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        .warning-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px;
+        }
+        .warning-message {
+            font-size: 1.5em;
+            color: #dc3545;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .warning-button, .back-button {
+            display: inline-block;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+        .warning-button {
+            background-color: #28a745; /* Green color */
+        }
+        .warning-button:hover {
+            background-color: #218838;
+            transform: translateY(-3px);
+        }
+        .back-button {
+            background-color: #007bff; /* Blue color */
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="warning-container">
+        <p class="warning-message">!תיעודים קשים לצפייה - ללא צנזורה</p>
+        <a href="{% url 'difficult_documents_view' %}" class="warning-button">למעבר לחץ כאן</a>
+        <br> <!-- Add a line break to separate the buttons -->
+        <a href="{% url 'home' %}" class="back-button">חזרה לעמוד הראשי</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonies of Abductees</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Times New Roman', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            padding-bottom: 60px;
+        }
+        .bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("{% static 'images/hamas.webp' %}");
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height:195px;
+            padding: 10px;
+            box-sizing: border-box;
+            padding-bottom: 60px;
+        }
+        .header {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .header h1 {
+            font-family: 'Georgia', serif;
+            color: #ffffff;
+            font-size: 55px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            padding: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .button-container .button-wrapper {
+            position: relative;
+        }
+        .button-container .button-wrapper::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: -1;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .button-container .back-button,
+        .button-container .add-button {
+            background-color: transparent;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: none;
+            position: relative;
+            z-index: 1;
+        }
+        .button-container .back-button a,
+        .button-container .add-button a {
+            display: inline-block;
+            color: #ffffff;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button-container .back-button a {
+            background-color: #2196F3;
+        }
+        .button-container .back-button a:hover {
+            background-color: #0b7dda;
+            transform: scale(1.05);
+        }
+        .button-container .add-button a {
+            background-color: #4CAF50;
+        }
+        .button-container .add-button a:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .testimony-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .testimony-box {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+        }
+        .testimony-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .testimony-box img {
+            width: 300px;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        .testimony-box:hover img {
+            transform: scale(1.1);
+        }
+        .testimony-box h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin: 0 0 10px;
+            font-weight: bold;
+        }
+        .testimony-box p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .testimony-box p strong {
+            color: #333;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-family: 'Arial'
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="header">
+            <h1>עדויות חטופים שחזרו משבי חמאס</h1>
+        </div>
+
+        <div class="button-container">
+            <div class="back-button">
+                <a href="{% url 'home' %}">חזרה לעמוד הראשי</a>
+            </div>
+            {% if user.is_authenticated %}
+                <div class="add-button">
+                    <a href="{% url 'add_abductee_testimony' %}">הוספת עדות של חטוף</a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="testimony-grid">
+            {% for testimony in testimonies %}
+                <a href="{% url 'abductee_details' testimony.id %}" class="testimony-box">
+                    <h2>{{ testimony.owner }}</h2>
+                    {% if testimony.image %}
+                    <img src="{{ testimony.image.url }}" alt="Abductee Image" style="max-width: 300px;">
+                {% else %}
+                    <p>No image available</p>
+                {% endif %}
+                    <p><strong>גיל:</strong> {{ testimony.age }}</p>
+                    <p>{{ testimony.date_of_return }} <strong>:תאריך שחרור מהשבי </strong> </p>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="footer">
+        "כל הזכויות שמורות לאתר - "היכל התהילה של גיבורי מלחמת חרבות הברזל ©   
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Deletion</title>
+  <style>
+    body {
+      direction: rtl; /* Right-to-left text direction */
+      text-align: right; /* Align text to the right */
+      font-family: Times New Roman, sans-serif; /* Set a readable font */
+      margin: 0; /* Remove default margin */
+      background-color: #f4f4f4; /* Light gray background for contrast */
+      display: flex; /* Use flexbox */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      min-height: 100vh; /* Minimum height of the viewport */
+      overflow: auto; /* Enable scrolling */
+    }
+    .container {
+      background: #fff; /* White background for the container */
+      padding: 20px; /* Add some padding */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      text-align: center; /* Center align text inside the container */
+      max-width: 600px; /* Max width for the container */
+      width: 100%; /* Full width */
+      margin: 20px; /* Margin for better spacing */
+    }
+    h1 {
+      color: #333; /* Dark gray color for the heading */
+    }
+    h2 {
+      color: #555; /* Slightly lighter gray for the subheading */
+      margin: 10px 0; /* Margin for spacing */
+    }
+    button {
+      background-color: #d9534f; /* Bootstrap danger color */
+      color: #fff; /* White text */
+      border: none; /* Remove default border */
+      padding: 10px 20px; /* Add some padding */
+      border-radius: 4px; /* Rounded corners for the button */
+      cursor: pointer; /* Pointer cursor on hover */
+      font-size: 16px; /* Slightly larger font size */
+      margin-top: 20px; /* Margin on top */
+    }
+    button:hover {
+      background-color: #c9302c; /* Darker red on hover */
+    }
+    a {
+      color: #0275d8; /* Bootstrap primary color */
+      text-decoration: none; /* Remove underline */
+      display: block; /* Block display for margin */
+      margin-top: 10px; /* Margin on top */
+    }
+    a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>האם אתה בטוח שברצונך למחוק את עדות החטיפה הזו?</h1>
+    <p>{{ testimony.story }}</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">כן, למחוק</button>
+      <a href="{% url 'testimonies-abductees' %}">לא, חזור לעמוד עדויות החטופים</a>
+    </form>
+  </div>
+</body>
+</html>

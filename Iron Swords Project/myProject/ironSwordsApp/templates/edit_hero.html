@@ -72,11 +72,12 @@
     <div class="header">
         <h1>ערוך מידע על גיבור</h1>
     </div>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">שמור שינויים</button>
     </form>
+    
     <a href="{% url 'home' %}">ביטול</a>
 </body>
 </html>

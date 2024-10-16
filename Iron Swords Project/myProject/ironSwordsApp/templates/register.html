@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>הרשמה</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: Times New Roman, sans-serif;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,39 +17,58 @@
         }
         .register-box {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 300px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 350px;
             text-align: center;
         }
         .register-box h2 {
             margin-bottom: 20px;
+            color: #343a40;
+        }
+        .register-box p {
+            margin-bottom: 20px;
+            color: #6c757d;
         }
         .register-box input {
             width: calc(100% - 22px);
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            box-sizing: border-box;
         }
         .register-box button {
             width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
+            padding: 12px;
+            background-color: #28a745; /* צבע ירוק */
             border: none;
             color: #fff;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 16px;
         }
         .register-box button:hover {
-            background-color: #0056b3;
+            background-color: #218838; /* גוון כהה יותר לירוק */
+        }
+        .register-box .links {
+            margin-top: 15px;
+        }
+        .register-box .links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .register-box .links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="register-box">
         <h2>הרשמה</h2>
+        <p> .זה מהיר וקל</p>
         {% if messages %}
             {% for message in messages %}
                 <p style="color: green;">{{ message }}</p>

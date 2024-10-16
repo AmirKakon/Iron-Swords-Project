@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delete</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .confirmation-box {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .confirmation-box p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .confirmation-box button,
+        .confirmation-box a {
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 10px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .confirm {
+            background-color: #28a745;
+            border: none;
+        }
+        .confirm:hover {
+            background-color: #218838;
+        }
+        .cancel {
+            background-color: #dc3545;
+            border: none;
+        }
+        .cancel:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-box">
+        <p> מחיקת תגובה זו לצמיתות</p>
+        <form method="post" action="{% url 'delete_comment' comment.id %}">
+            {% csrf_token %}
+            <button type="submit" class="confirm">אישור</button>
+            <a href="{% url 'zaka_people' %}" class="cancel">ביטול</a>
+        </form>
+    </div>
+</body>
+</html>

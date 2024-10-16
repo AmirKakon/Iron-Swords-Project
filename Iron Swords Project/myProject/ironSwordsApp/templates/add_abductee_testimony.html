@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הוסף עדות חטוף</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 0;
+            direction: rtl; /* Right-to-left text direction */
+            text-align: right; /* Right align text */
+        }
+        .container {
+            width: 70%;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center; /* Center align the heading */
+            color: #007bff; /* Bright color for the heading */
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #495057;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        .form-group button, .form-group .back-button {
+            font-family: 'Arial', sans-serif;
+            font-size: 1rem;
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .form-group button {
+            background-color: #007bff; /* Blue button color */
+            margin-right: 1rem; /* Space between buttons */
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+        }
+        .form-group button:active {
+            background-color: #003d7a;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateY(0);
+        }
+        .form-group .back-button {
+            background-color: #6c757d; /* Gray button color */
+        }
+        .form-group .back-button:hover {
+            background-color: #5a6268;
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+        }
+        .form-group .back-button:active {
+            background-color: #343a40;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateY(0);
+        }
+        .form-group input[type="hidden"] {
+            display: none;
+        }
+        .footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-family: 'Arial'
+        }
+    </style>
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>הוסף עדות חטוף ששוחרר משבי חמאס</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.owner.label_tag }}
+                {{ form.owner }}
+            </div>
+            <div class="form-group">
+                {{ form.story.label_tag }}
+                {{ form.story }}
+            </div>
+            <div class="form-group">
+                {{ form.age.label_tag }}
+                {{ form.age }}
+            </div>
+            <div class="form-group">
+                {{ form.date_of_return.label_tag }}
+                {{ form.date_of_return }}
+            </div>
+            <div class="form-group">
+                {{ form.image.label_tag }} <!-- Label for the image field -->
+                {{ form.image }} <!-- Image input field -->
+            </div>
+            <div class="form-group">
+                <button type="submit">שלח</button>
+                <a href="{% url 'testimonies-abductees' %}" class="back-button">חזרה לעדויות של חטופים  </a>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        © "כל הזכויות שמורות לאתר - "היכל התהילה של גיבורי מלחמת חרבות הברזל
+    </footer>
+</body>
+</html>

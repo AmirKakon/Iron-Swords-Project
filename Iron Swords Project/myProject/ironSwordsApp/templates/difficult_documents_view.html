@@ -1,0 +1,303 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תיעודים קשים לצפייה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .back-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+        }
+        .content-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #d9534f;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .content-warning {
+            background-color: #fce4e4;
+            border-left: 5px solid #d9534f;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .highlighted-paragraph {
+            background-color: #d9edf7;
+            border-left: 5px solid #31708f;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .media-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .media-content img,
+        .media-content video {
+            flex: 1;
+            max-width: 48%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .media-content video {
+            max-height: 250px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="{% url 'home' %}" class="back-button">חזרה לעמוד הראשי</a>
+
+    <div class="content-container">
+        <h1>תיעודים קשים לצפייה</h1>
+        <div class="content-warning">
+            <p>אזהרה: התוכן בדף זה מכיל תמונות וסרטונים שעשויים להיות קשים לצפייה. הם כוללים תיאורים גרפיים ועלולים לעורר תגובות רגשיות חזקות. צפייה בתכנים אלו היא באחריותכם הבלעדית.</p>
+        </div>
+        <p class="highlighted-paragraph">תוכן קשה לצפייה אודות אירועי 7 באוקטובר, כולל תיאורים, תמונות וסרטונים שצולמו בזמן אמת:</p>
+        
+        <!-- Media content -->
+        <div class="media-content">
+
+    <!-- Videos -->
+    <video controls>
+    <source src="{% static 'difficult_documents/video39.mp4' %}" type="video/mp4">
+    </video> 
+    <source src="{% static 'difficult_documents/video40.mp4' %}" type="video/mp4">
+    </video>   
+    <source src="{% static 'difficult_documents/video1.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video2.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video3.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video4.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video5.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video6.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video7.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video8.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video9.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video10.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video11.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video12.mp4' %}" type="video/mp4">
+     </video>
+     <video controls>
+    <source src="{% static 'difficult_documents/video13.mp4' %}" type="video/mp4">
+     </video>
+     <video controls>
+    <source src="{% static 'difficult_documents/video14.mp4' %}" type="video/mp4">
+     </video>
+     <video controls>
+    <source src="{% static 'difficult_documents/video15.mp4' %}" type="video/mp4">
+     </video>
+     <video controls>
+    <source src="{% static 'difficult_documents/video16.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video17.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video18.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video19.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video20.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video21.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video22.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video23.mp4' %}" type="video/mp4">
+     </video>
+     <video controls>
+    <source src="{% static 'difficult_documents/video24.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video25.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video26.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video27.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video28.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video29.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video30.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video31.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video32.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video33.mp4' %}" type="video/mp4">
+    </video>
+    <video controls>
+    <source src="{% static 'difficult_documents/video34.mp4' %}" type="video/mp4">
+    </video>
+    <source src="{% static 'difficult_documents/video35.mp4' %}" type="video/mp4">
+    </video>
+    <source src="{% static 'difficult_documents/video36.mp4' %}" type="video/mp4">
+    </video>
+    <source src="{% static 'difficult_documents/video37.mp4' %}" type="video/mp4">
+    </video>
+   <source src="{% static 'difficult_documents/video38.mp4' %}" type="video/mp4">
+    </video>
+
+    
+            <!-- Image -->
+            <img src="{% static 'difficult_documents/pic1.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic2.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic3.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic4.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic5.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic6.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic7.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic8.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic9.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic10.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic11.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic12.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic13.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic14.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic15.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic16.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic17.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic18.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic19.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic20.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic21.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic22.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic23.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic24.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic25.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic26.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic27.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic28.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic29.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic30.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic31.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic32.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic33.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic34.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic35.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic36.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic37.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic38.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic39.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic40.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic41.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic42.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic43.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic44.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic45.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic46.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic47.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic48.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic49.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic50.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic51.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic52.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic53.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic54.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic55.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic56.jpg' %}" alt="תמונה לדוגמה">
+            <img src="{% static 'difficult_documents/pic57.jpg' %}" alt="תמונה לדוגמה">
+
+     </div>
+    </div>
+
+    <footer class="footer">
+        © כל הזכויות שמורות לאתר - "היכל התהילה של גיבורי מלחמת חרבות הברזל"
+    </footer>
+</body>
+</html>

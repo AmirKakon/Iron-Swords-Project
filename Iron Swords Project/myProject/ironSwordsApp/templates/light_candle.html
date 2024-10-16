@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light a Candle in Memory</title>
+    <style>
+        body {
+            background-image: url("{% static 'images/candlee.jpg' %}");
+            background-size: cover; /* Make the background image cover the entire page */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-attachment: fixed; /* Keep the background image fixed when scrolling */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            direction: rtl;
+            position: relative;
+            background-color: #ffffff; /* Fallback color in case image doesn't load */
+        }
+        
+        .back-button {
+            position: absolute;
+            top: -20px; /* Move the button further up */
+            right: 20px; /* Align the button to the right */
+            margin: 0; /* Remove any margin */
+            padding: 10px 20px;
+        }
+
+        .back-button a {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .back-button a:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-top: 60px;
+            font-size: 2.8em;
+            font-weight: bold;
+        }
+
+        p {
+            color: #ffffff;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        form {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 30px;
+            background: #f9f9f9; /* צבע רקע בהיר */
+            border-radius: 15px; /* פינות מעוגלות יותר */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* צללים רכים יותר */
+            max-width: 500px;
+            border: 1px solid #ddd;
+            text-align: right;
+        }
+        
+        form label {
+            color: #333; /* צבע טקסט כהה יותר */
+            font-size: 1.1em; /* גודל טקסט גדול יותר */
+            margin-bottom: 12px; /* רווח גדול יותר מתחת לתוויות */
+            display: block;
+        }
+        
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            color: #333; /* צבע טקסט כהה יותר */
+            background: #fff; /* צבע רקע לבן לשדות הקלט */
+            border: 1px solid #ccc; /* גבול עדין מסביב לשדות */
+            border-radius: 8px; /* פינות מעוגלות לשדות הקלט */
+            padding: 10px; /* רווח פנימי נוח */
+            width: 100%; /* רוחב מלא של שדה הקלט */
+            box-sizing: border-box; /* כולל padding בגובה הכללי של שדה הקלט */
+            margin-bottom: 15px; /* רווח מתחת לכל שדה */
+            font-size: 1em; /* גודל טקסט נעים לקריאה */
+        }
+        
+        form textarea {
+            resize: vertical; /* אפשרות לשינוי גובה של textarea */
+            min-height: 100px; /* גובה מינימלי של textarea */
+        }
+        
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto 0;
+            background-color: #ff7f50; /* צבע רקע חם */
+            color: #fff;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #ff6f40;
+            transform: translateY(-2px);
+        }
+        
+
+        h2 {
+            color: #ffffff;
+            font-size: 2em;
+            margin-top: 40px;
+            font-weight: bold;
+        }
+
+        .candle {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 15px;
+            background: #faf3e0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 700px; /* Fixed width for all candles */
+            height: 150px; /* Fixed height for all candles */
+            border: 1px solid #e0d9d9;
+            text-align: right;
+            box-sizing: border-box; /* Ensure padding is included within the width and height */
+        }
+
+        .candle p {
+            margin: 5px 0; /* Adjust margins to fit content neatly */
+            color: #000;
+        }
+
+        .candle p strong {
+            color: #000;
+        }
+        .candle-container {
+            display: flex;
+            align-items: center; /* מרכז את התוכן אנכית */
+            margin-bottom: 20px; /* רווח מתחת לכל נר */
+            padding: 10px; /* רווח פנימי סביב התוכן */
+            border: 2px solid rgba(255, 165, 0, 0.5); /* גבול בצבע כתום עם 50% שקיפות */
+            border-radius: 10px; /* פינות מעוגלות, מותאם אישית */
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .candle-content {
+            float: left; /* תציב את תוכן הנר בצד שמאל */
+            width: calc(100% - 120px); /* הווידיאו של תוכן הנר פחות רוחב התמונה */
+        }
+        
+        .candle-image {
+            float: right; /* תציב את התמונה בצד ימין */
+            width: 100px; /* התאם את רוחב התמונה לפי הצורך */
+            height: auto; /* גובה אוטומטי לשמירה על יחס גובה-רוחב */
+        }
+        
+        .candle-image img {
+            width: 120px; /* התאם את רוחב התמונה לפי הצורך */
+            height: auto;
+        }
+    
+
+        .footer {
+            background-color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-background">
+
+    <h1>הדלקת נר לזכרם</h1>
+    <p> <strong>כולנו מרכינים ראש, לזכר אלו אשר מסרו נפשם במלחמת "חרבות ברזל" </strong></p> 
+    <p> אנו מזמינים אתכם להדליק נר זכרון וירטואלי </p>
+    <div class="back-button">
+        <a href="{% url 'home' %}">חזרה לעמוד הראשי</a>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="הדלקת נר ">
+    </form>
+
+    <h2>נרות דולקים</h2>
+   {% for candle in candles %}
+        <div class="candle-container">
+            <div class="candle-content">
+                <div class="candle-image">
+                    <img src="{% static 'images/candle.jpeg' %}" alt="נר">
+                </div>
+                <p>בתאריך: {{ candle.date_lit|date:"F j, Y" }}</p>
+                <p>הודלק נר לזכר: <strong>{{ candle.name }}</strong></p>
+                {% if candle.message %}
+                    <p>"{{ candle.message }}"</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <footer class="footer">
+        © כל הזכויות שמורות לאתר -"היכל התהילה של גיבורי מלחמת חרבות הברזל"
+    </footer>
+</body>
+</html>
