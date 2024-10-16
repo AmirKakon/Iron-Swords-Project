@@ -1,0 +1,1 @@
+web: gunicorn ironSwords.wsgi --log-file -
